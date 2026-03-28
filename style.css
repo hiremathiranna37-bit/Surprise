@@ -12,7 +12,9 @@ body {
   overflow-x: hidden;
 }
 
-/* SECTIONS */
+/* ===============================
+   SECTION BASE
+   =============================== */
 section {
   min-height: 100vh;
   display: none;
@@ -21,21 +23,43 @@ section {
   flex-direction: column;
   text-align: center;
   padding: 60px 24px;
+  position: relative;
+
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 section.active {
   display: flex;
 }
 
-/* CLEAR BACKGROUNDS (NO DARK OVERLAY) */
-#page1 { background-image: url("10.jpeg"); }
-#page2 { background-image: url("8.jpeg"); }
-#page3 { background-image: url("4.jpeg"); }
-#page4 { background-image: url("12.jpeg"); }
+/* 🔥 BACKGROUND DIMMING (50% LESS BRIGHTNESS) */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* exactly 50% brightness reduction */
+  z-index: 0;
+}
 
-/* HEADINGS */
+/* FRONT CONTENT CLEAR */
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   PAGE BACKGROUNDS
+   =============================== */
+#page1 { background-image: url("10.jpeg"); }
+#page2 { background-image: url("12.jpeg"); }
+#page3 { background-image: url("8.jpeg"); }
+#page4 { background-image: url("19.jpeg"); }
+
+/* ===============================
+   HEADINGS
+   =============================== */
 h1, h2 {
   font-family: 'Playfair Display', serif;
   letter-spacing: 1.5px;
@@ -45,21 +69,28 @@ h1 {
   font-size: 3rem;
   color: #ffd700;
   margin-bottom: 15px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
 h2 {
   color: #ffeb9c;
   margin-bottom: 20px;
+  text-shadow: 0 3px 15px rgba(0,0,0,0.5);
 }
 
-/* TEXT */
+/* ===============================
+   TEXT
+   =============================== */
 p {
   max-width: 900px;
   line-height: 1.9;
   font-size: 1rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* BUTTON */
+/* ===============================
+   BUTTONS
+   =============================== */
 .btn {
   margin-top: 30px;
   padding: 14px 46px;
@@ -70,6 +101,7 @@ p {
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .btn:hover {
@@ -81,7 +113,9 @@ p {
   bottom: 40px;
 }
 
-/* PAGE 2 */
+/* ===============================
+   PAGE 2 – 10 IMAGES
+   =============================== */
 .emoji-strip {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -104,9 +138,12 @@ p {
 .photo-grid-10 img {
   width: 100%;
   border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* PAGE 3 */
+/* ===============================
+   PAGE 3 – TEDDY
+   =============================== */
 .teddy-rain {
   font-size: 3rem;
   margin: 30px 0;
@@ -118,7 +155,9 @@ p {
   to { transform: translateY(20px); }
 }
 
-/* PAGE 4 */
+/* ===============================
+   PAGE 4 – 20 IMAGES
+   =============================== */
 .photo-grid-20 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -129,17 +168,20 @@ p {
 .photo-grid-20 img {
   width: 100%;
   border-radius: 15px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.6);
 }
 
 .wish {
   margin-top: 30px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   padding: 30px;
   border-radius: 20px;
   color: #000;
 }
 
-/* MOBILE */
+/* ===============================
+   MOBILE
+   =============================== */
 @media(max-width: 768px) {
   .photo-grid-10 {
     grid-template-columns: 1fr;
