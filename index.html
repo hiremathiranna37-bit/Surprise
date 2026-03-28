@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head<link rel="stylesheet" href="style.css">>
+<head>
   <meta charset="UTF-8">
   <title>Special For Rii ✨</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <!-- CSS connection -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1 : LUXURY WELCOME -->
 <section id="page1" class="active">
-  <h1>Welcome Riii ✨</h1>
+  <h1>Welcome Riii 🤗✨</h1>
   <p>A luxury surprise made with heart 💙</p>
 
   <button class="btn" onclick="goPage('page2')">Tap for Surprise 🎁</button>
-  <button class="btn btn-bottom" onclick="goPage('page2')">One More Tap 💫</button>
 </section>
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 : SMILES (10 IMAGES) -->
 <section id="page2">
-  <h2>Here.!!see your some beautiful smiles of you 💛</h2>
+  <h2>Your beautiful smiles 💛</h2>
 
-  <div class="emoji-strip">😊✨💖🎂🌸💙🥰✨🎈</div>
-
-  <div class="photo-grid-10">
+  <div class="photo-full">
     <img src="1.jpeg">
     <img src="2.jpeg">
     <img src="3.jpeg">
@@ -44,20 +38,19 @@
   <button class="btn" onclick="goPage('page3')">Next ✨</button>
 </section>
 
-<!-- PAGE 3 -->
+<!-- PAGE 3 : MESSAGE -->
 <section id="page3">
-  <h1>HAPPY BIRTHDAY MADAM JI 🎂💖</h1>
-
-  <div class="teddy-rain">🧸🧸🧸🧸🧸🧸🧸🧸🧸</div>
+  <h1>Happy Birthday Madam Ji 🎂💖</h1>
+  <p>You deserve all happiness and success 🌸✨</p>
 
   <button class="btn" onclick="goPage('page4')">Final Surprise 💎</button>
 </section>
 
-<!-- PAGE 4 -->
+<!-- PAGE 4 : FINAL PAGE (20 IMAGES) -->
 <section id="page4">
-  <h2>For You, Riii 💙</h2>
+  <h2>Memories For You 💙</h2>
 
-  <div class="photo-grid-20">
+  <div class="grid-photos">
     <img src="1.jpeg"><img src="2.jpeg"><img src="3.jpeg"><img src="4.jpeg"><img src="5.jpeg">
     <img src="6.jpeg"><img src="7.jpeg"><img src="8.jpeg"><img src="9.jpeg"><img src="10.jpeg">
     <img src="11.jpeg"><img src="21.jpeg"><img src="13.jpeg"><img src="14.jpeg"><img src="15.jpeg">
@@ -65,20 +58,16 @@
   </div>
 
   <p class="wish">
-    Happy Birthday to my amazing long-distance friend, Rii! 🎂✨💖 
-    Even though there are so many miles between us today, 🌎📍 I am sending you the biggest, warmest hug through this message! 🤗💌 
-    I want you to know how incredibly proud I am of the person you’re becoming. 🌟💪 
-    This year is yours for the taking, and I know you’re going to crush every goal! 🚀🎯 Don’t ever let a single doubt slow down your hustle or dim your bright light. 
-    🕯️🚫 You have the heart of a lion and the drive to achieve pure greatness. 🦁💎 May your hard work turn into the massive success you truly deserve. 
-    📈💰 I’m constantly cheering for you from afar and celebrating every win with you! 🥂🎊 Keep pushing forward, keep dreaming big, and keep being uniquely you. 
-    🌈✨ I hope your day is filled with endless laughter, cake, and pure joy. 🍰🎈🎁 I can't wait for the day we finally get to celebrate together in person! 
-    👯‍♀️✈️once again Happy Birthday, Rii! Go out there and make this your best year yet! 🥳🔥👑
+    Happy Birthday Rii 🥳💖  
+    No matter the distance, you’re always special.  
+    Keep shining and smiling 🌟💫
   </p>
 </section>
 
+<!-- PAGE SWITCH SCRIPT -->
 <script>
-function goPage(id) {
-  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+function goPage(id){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
 </script>
